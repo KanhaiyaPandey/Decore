@@ -30,7 +30,7 @@ const getThemeFromLocalStorage = () => {
     }, [theme]);
 
   return (
-    <nav className='bg-base-200'>
+    <nav className='bg-base-200 fixed w-full top-0 z-50'>
     <div className='navbar align-element '>
       <div className='navbar-start'>
         {/* Title */}
