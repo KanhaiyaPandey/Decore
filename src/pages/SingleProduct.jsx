@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { useLoaderData , Link} from 'react-router-dom';
 import { formatPrice, generateAmountOptions } from '../utils/helper';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../assets/features/cart/cartSlice';
 
 const SingleProduct = () => {
 
@@ -15,6 +17,24 @@ const SingleProduct = () => {
   const handleAmount = (e) => {
     setAmount(parseInt(e.target.value));
   };
+
+  
+  const dispatch = useDispatch();
+
+  const cartProduct = {
+    cartID: product.id + productColor,
+    productID: product.id,
+    image,
+    title,
+    price,
+    amount,
+    productColor,
+    company,
+  }
+  
+  const addToCart = () => {
+    dispatch (addItem({product: cartProduct}));
+  }
 
   return (
     <section>
@@ -84,7 +104,7 @@ const SingleProduct = () => {
         <div className='mt-10 '>
           <button
             className='btn btn-primary btn-md'
-            onClick={() => console.log('add to bag')}
+            onClick={addToCart}
           >
             Add to Cart
           </button>
