@@ -29,7 +29,9 @@ const initialState = {
         console.log('login');
       },
       logoutUser: (state) => {
-        console.log('logout');
+        state.user = null;
+      localStorage.removeItem('user');
+      toast.success('Logged out successfully');
       },
       toggleTheme: (state) => {
         const { retro, coffee } = themes;

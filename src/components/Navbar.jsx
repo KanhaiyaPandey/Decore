@@ -19,7 +19,7 @@ import { toggleTheme } from '../assets/features/user/userSlice';
     const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
 
   return (
-    <nav className='bg-base-200 fixed w-full top-0 z-50'>
+    <nav className='bg-base-200 fixed w-full z-50'>
     <div className='navbar align-element '>
       <div className='navbar-start'>
         {/* Title */}
