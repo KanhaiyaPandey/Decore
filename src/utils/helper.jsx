@@ -10,7 +10,7 @@ export const formatPrice = (price) => {
     const rupeeAmount = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'INR',
-    }).format((price * 4).toFixed(2));
+    }).format((price / 4).toFixed(2));
     return rupeeAmount;
   };
 
